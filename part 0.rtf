@@ -1,13 +1,13 @@
 0.4 new note
 
 note over browser:
-form data is sent with HTTP POST
+form data is sent with HTTP POST
 end note
 
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 
 note over server:
-server starts executing js-code that accesses data sent from the form and adds a new note object to an array
+server starts executing js-code that accesses data sent from the form and adds a new note object to an array
 end note
 
 server-->browser: URL redirect /exampleapp/notes
@@ -21,7 +21,7 @@ browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ..., { <new note object> }]
 
 note over browser:
-browser executes the event handler that renders and updated list of notes to display
+browser executes the event handler that renders and updated list of notes to display
 end note
 
 
@@ -42,10 +42,10 @@ server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...,]
 browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
 
 note over server:
-server executes js-code to parse  JSON-data contained in the HTTP POST request sent from the browser
+server executes js-code to parse  JSON-data contained in the HTTP POST request sent from the browser
 end note
 
 server-->browser: { <new note object> }
 
 note over browser:
-browser fetches js-code from the server and uses it to register an event handler, which is used to  prevent a new GET request, create  a new note, add it to the notes list, and send the new note to the server end note
+browser fetches js-code from the server and uses it to register an event handler, which is used to prevent a new GET request, create a new note, add it to the notes list, and send the new note to the server end note
