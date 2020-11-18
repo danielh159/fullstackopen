@@ -1,65 +1,51 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2512
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 AndaleMono;
-}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+0.4 new note
 
-\f0\b\fs36 \cf0 0.4 new note
-\f1\b0\fs24 \
-\
-
-\f2 note over browser:\
-form data is sent with\uc0\u8232 HTTP POST\
-end note\
-\
-browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note\
-\
-note over server:\
-server starts executing js-code\uc0\u8232 that accesses data sent from the\u8232 form and adds a new note object to\u8232 an array\
-end note\
-\
-server-->browser: URL redirect /exampleapp/notes\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes\
-server-->browser: notes.html\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css\
-server-->browser: main.css\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js\
-server-->browser: main.js\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json\
-server-->browser: [\{ content: "HTML is easy", date: "2019-05-23" \}, ..., \{ <new note object> \}]\
-\
-note over browser:\
-browser executes the event handler\uc0\u8232 that renders and updated list of notes\u8232 to display\
+note over browser:
+form data is sent with HTTP POST
 end note
-\fs36 \
-\
 
-\f0\b 0.5 Single Page App
-\f2\b0\fs24 \
-\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa\
-server-->browser: spa.html\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css\
-server-->browser: main.css\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js\
-server-->browser: spa.js\
-browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json\
-server-->browser: [\{ content: "HTML is easy", date: "2019-05-23" \}, ...,]
-\f0\b\fs36 \
-\
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+server starts executing js-code that accesses data sent from the form and adds a new note object to an array
+end note
+
+server-->browser: URL redirect /exampleapp/notes
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: notes.html
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ..., { <new note object> }]
+
+note over browser:
+browser executes the event handler that renders and updated list of notes to display
+end note
+
+
+0.5 Single Page App
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: spa.html
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...,]
+
+
 0.6 New note
-\f2\b0\fs24 \
-\
-browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa\
-\
-note over server:\
-server executes js-code to\uc0\u8232 parse  JSON-data contained in\u8232 the HTTP POST request sent from\u8232 the browser\
-end note\
-\
-server-->browser: \{ <new note object> \}\
-\
-note over browser:\
-browser fetches js-code from\uc0\u8232 the server and uses it to register\u8232 an event handler, which is used to \u8232 prevent a new GET request, create \u8232 a new note, add it to the notes list, and\u8232 send the new note to the server\u8232 end note\
-}
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+server executes js-code to parse  JSON-data contained in the HTTP POST request sent from the browser
+end note
+
+server-->browser: { <new note object> }
+
+note over browser:
+browser fetches js-code from the server and uses it to register an event handler, which is used to  prevent a new GET request, create  a new note, add it to the notes list, and send the new note to the server end note
